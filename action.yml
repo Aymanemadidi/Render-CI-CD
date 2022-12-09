@@ -1,0 +1,12 @@
+name: "Aymane"
+description: "A test of Github Action CI"
+author: "Aymane Elmadidi"
+
+inputs:
+  GITHUB_TOKEN:
+    description: "Github Token"
+    required: true
+
+runs:
+  using: "node12"
+  main: "dist/server.js"
