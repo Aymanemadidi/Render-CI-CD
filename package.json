@@ -5,7 +5,7 @@
 	"main": "server.js",
 	"type": "module",
 	"scripts": {
-		"build": "ncc build server.js -o dist",
+		"build": "ncc build action.js -o dist",
 		"dev": "nodemon server.js",
 		"start": "node server.js",
 		"test": "echo \"Error: no test specified\" && exit 1"
