@@ -9624,26 +9624,26 @@ var __webpack_exports__ = {};
 
 
 
-console.log("From Github Actions!!!");
-async function run() {
-	const GITHUB_TOKEN = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput("GITHUB_TOKEN");
+console.log("This message was sent from Github Actions!");
+// async function run() {
+// 	const GITHUB_TOKEN = core.getInput("GITHUB_TOKEN");
 
-	const octokit = _actions_github__WEBPACK_IMPORTED_MODULE_1__.getOctokit(GITHUB_TOKEN);
+// 	const octokit = github.getOctokit(GITHUB_TOKEN);
 
-	const { context = {} } = _actions_github__WEBPACK_IMPORTED_MODULE_1__;
-	const { pull_request } = context.payload;
-	try {
-		await octokit.issues.createComment({
-			...context.repo,
-			issue_number: pull_request.number,
-			body: "Hello from aymane, thanks for your pull request",
-		});
-	} catch (e) {
-		console.log(e);
-	}
-}
+// 	const { context = {} } = github;
+// 	const { pull_request } = context.payload;
+// 	try {
+// 		await octokit.issues.createComment({
+// 			...context.repo,
+// 			issue_number: pull_request.number,
+// 			body: "Hello from aymane, thanks for your pull request",
+// 		});
+// 	} catch (e) {
+// 		console.log(e);
+// 	}
+// }
 
-run();
+// run();
 
 })();
 
