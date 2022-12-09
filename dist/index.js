@@ -9632,12 +9632,15 @@ async function run() {
 
 	const { context = {} } = _actions_github__WEBPACK_IMPORTED_MODULE_1__;
 	const { pull_request } = context.payload;
-
-	await octokit.issues.createComment({
-		...context.repo,
-		issue_number: pull_request.number,
-		body: "Hello from aymane, thanks for your pull request",
-	});
+	try {
+		await octokit.issues.createComment({
+			...context.repo,
+			issue_number: pull_request.number,
+			body: "Hello from aymane, thanks for your pull request",
+		});
+	} catch (e) {
+		console.log(e);
+	}
 }
 
 run();

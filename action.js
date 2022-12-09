@@ -9,12 +9,15 @@ async function run() {
 
 	const { context = {} } = github;
 	const { pull_request } = context.payload;
-
-	await octokit.issues.createComment({
-		...context.repo,
-		issue_number: pull_request.number,
-		body: "Hello from aymane, thanks for your pull request",
-	});
+	try {
+		await octokit.issues.createComment({
+			...context.repo,
+			issue_number: pull_request.number,
+			body: "Hello from aymane, thanks for your pull request",
+		});
+	} catch (e) {
+		console.log(e);
+	}
 }
 
 run();
