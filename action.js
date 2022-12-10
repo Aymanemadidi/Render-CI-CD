@@ -2,6 +2,9 @@ import core from "@actions/core";
 import github from "@actions/github";
 
 console.log("This message was sent from Github Actions!");
+console.log("Throwing error");
+throw new Error("I am the error");
+console.log("This should not be visible");
 // async function run() {
 // 	const GITHUB_TOKEN = core.getInput("GITHUB_TOKEN");
 
